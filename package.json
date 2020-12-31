@@ -1,0 +1,20 @@
+{
+  "name": "templatev3",
+  "version": "1.0.0",
+  "description": "## Hosted at ``` https://template-v3-d17a7.web.app/ ```",
+  "main": "cd server && server.js",
+  "scripts": {
+    "start": "cd server && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oevadee/templatev3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oevadee/templatev3/issues"
+  },
+  "homepage": "https://github.com/oevadee/templatev3#readme"
+}
