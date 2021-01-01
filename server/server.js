@@ -29,8 +29,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello wrld');
+})
+
 app.post("/subscribe", (req, res) => {
-  
   const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   if(!emailRegex.test(req.body.email.toLowerCase())) return res.status(400).send("Invalid email address");
