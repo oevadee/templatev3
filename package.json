@@ -1,20 +1,23 @@
 {
-  "name": "templatev3",
+  "name": "server",
   "version": "1.0.0",
-  "description": "## Hosted at ``` https://template-v3-d17a7.web.app/ ```",
-  "main": "cd server && server.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "cd server && node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oevadee/templatev3.git"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oevadee/templatev3/issues"
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "superagent": "^6.1.0"
   },
-  "homepage": "https://github.com/oevadee/templatev3#readme"
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
