@@ -12,7 +12,10 @@
         you want and send a message right away.
       </p>
       <form class="heroSection__form" @submit.prevent="handleSubmit">
-        <div class="inputContainer" :class="{ inputContainer__invalid: formState === 'invalidEmail' }">
+        <div
+          class="inputContainer"
+          :class="{ inputContainer__invalid: formState === 'invalidEmail' }"
+        >
           <input
             placeholder="Enter your email here"
             type="email"
@@ -70,7 +73,10 @@ export default {
   methods: {
     handleSubmit() {
       axios
-        .post("https://templatev3glo.herokuapp.com/subscribe", {
+        // .post("https://templatev3glo.herokuapp.com/subscribe", {
+        //   email: this.email,
+        // })
+        .post("http://localhost:8000/subscribe", {
           email: this.email,
         })
         .then((res) => {
@@ -78,6 +84,7 @@ export default {
           this.formState = "sent";
           this.buttonTitle = "Signed up";
           this.buttonIsDisabled = true;
+          this.inputIsDisabled = true;
         })
         .catch((err) => {
           console.log(err.response.data);
