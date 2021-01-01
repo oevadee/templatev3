@@ -55,8 +55,10 @@ app.post("/subscribe", (req, res) => {
       console.log(response.status);
       if (response.status === 200) {
         res.status(200).send("User signed");
-      } else {
+      } else if (response.status === 400) {
         res.status(400).send("Member already exist");
+      } else {
+        res.status(404).send('Shit some weird thing happening')
       };
     });
 });

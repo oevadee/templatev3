@@ -70,7 +70,7 @@ export default {
   methods: {
     handleSubmit() {
       axios
-        .post("http://localhost:8000/subscribe", {
+        .post("https://templatev3glo.herokuapp.com/subscribe", {
           email: this.email,
         })
         .then((res) => {
