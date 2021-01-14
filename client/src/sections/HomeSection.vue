@@ -73,12 +73,12 @@ export default {
   methods: {
     handleSubmit() {
       axios
-        // .post("https://templatev3glo.herokuapp.com/subscribe", {
-        //   email: this.email,
-        // })
         .post("http://localhost:8000/subscribe", {
           email: this.email,
         })
+        // .post("https://templatev3glo.herokuapp.com/subscribe", {
+        //   email: this.email,
+        // })
         .then((res) => {
           console.log(res.status);
           this.formState = "sent";

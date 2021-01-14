@@ -29,14 +29,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello wrld');
-})
+app.get("/", (req, res) => {
+  res.send("Hello wrld");
+});
 
 app.post("/subscribe", (req, res) => {
   const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-  if(!emailRegex.test(req.body.email.toLowerCase())) return res.status(400).send("Invalid email address");
+  if (!emailRegex.test(req.body.email.toLowerCase()))
+    return res.status(400).send("Invalid email address");
   request
     .post(
       `https://${mailchimpInstance}.api.mailchimp.com/3.0/lists/${listUniqueId}/members/`
@@ -52,14 +53,19 @@ app.post("/subscribe", (req, res) => {
     })
     .end((err, response) => {
       // if (err) throw err;
-      console.log(response.status);
+      // console.log(response.status);
+      console.log(response.body);
       if (response.status === 200) {
         res.status(200).send("User signed");
       } else if (response.status === 400) {
-        res.status(400).send("Member already exist");
+        res.status(400).send("Invalid email adress");
+      } else if (response.body.title === 'Member Exists') {
+        res.status(404).json({
+          message: "Member already exist"
+        });
       } else {
-        res.status(404).send('Shit some weird thing happening')
-      };
+        res.status(500).send("Shit some weird thing happening");
+      }
     });
 });
 
