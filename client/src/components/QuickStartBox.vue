@@ -7,31 +7,37 @@
         through. Follow step by step for more details.
       </p>
     </div>
-    <div class="quickStart">
-      <div class="quickStart__circle --active --circle1">
-        <p>1</p>
-      </div>
-      <div class="quickStart__line"></div>
-      <div class="quickStart__circle --circle2">
-        <p>2</p>
-      </div>
-      <div class="quickStart__line"></div>
-      <div class="quickStart__circle --circle3">
-        <p>3</p>
-      </div>
-    </div>
     <div class="steps">
-      <div>
-        <h3>Register Account</h3>
-        <small>Register your Email to be registered in our system.</small>
+      <div class="step">
+        <div class="step__circle --active">
+          <p>1</p>
+        </div>
+        <span>
+          <h3>Register Account</h3>
+          <small>Register your Email to be registered in our system.</small>
+        </span>
       </div>
-      <div>
-        <h3>Choose Plan</h3>
-        <small>Choose the Plan you want. You can use the free plan to try.</small>
+      <div class="step">
+        <div class="step__circle">
+          <p>2</p>
+        </div>
+        <span>
+          <h3>Choose Plan</h3>
+          <small
+            >Choose the Plan you want. You can use the free plan to try.</small
+          >
+        </span>
       </div>
-      <div>
-        <h3>Use Chatbot</h3>
-        <small>Chat bots are ready for you to use to help your business.</small>
+      <div class="step">
+        <div class="step__circle">
+          <p>3</p>
+        </div>
+        <span>
+          <h3>Use Chatbot</h3>
+          <small
+            >Chat bots are ready for you to use to help your business.</small
+          >
+        </span>
       </div>
     </div>
   </div>
@@ -54,77 +60,110 @@ export default {
   border-radius: 25px;
   background: $purple;
 
+  @media (max-width: $pc) {
+    padding: 40px;
+    height: 450px;
+  }
+
+  @media (max-width: $tablet) {
+    height: 800px;
+  }
+
   .upperText {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 80px;
 
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      text-align: center;
+    }
+
     h2 {
       width: 300px;
       font-size: 2rem;
       font-weight: 400;
+
+      @media (max-width: $tablet) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
 
     p {
       width: 485px;
       color: $off-white;
       letter-spacing: 2px;
+
+      @media (max-width: $pc) {
+        width: 50%;
+      }
+
+      @media (max-width: $tablet) {
+        width: 90%;
+      }
     }
-  }
-
-  .quickStart {
-    width: 85%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
-
-  .quickStart__circle {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $purple-light-shade;
-    p {
-      font-size: 2rem;
-    }
-  }
-
-  .--active {
-    background: $orange;
-  }
-
-  .quickStart__line {
-    width: 200px;
-    height: 1px;
-    border-top: 1px dashed $white;
   }
 
   .steps {
     width: 100%;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    div {
-      width: 220px;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      height: 500px;
+    }
 
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: $white;
-        margin-bottom: 15px
+    .step {
+      width: 250px;
+      height: 100%;
+
+      @media (max-width: $tablet) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px;
+      }
+    }
+
+    .step__circle {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $purple-light-shade;
+      margin-bottom: 20px;
+
+      @media (max-width: $tablet) {
+        margin: 0 40px 0 0;
       }
 
-      small {
-        font-size: 1rem;
-        color: $grey;
+      p {
+        font-size: 2rem;
       }
+    }
+
+    .--active {
+      background: $orange;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: $white;
+      margin-bottom: 15px;
+    }
+
+    small {
+      font-size: 1rem;
+      color: $grey;
     }
   }
 }

@@ -29,8 +29,7 @@ export default {
 @import "../__variables.scss";
 
 .feature {
-  border: solid 1px red;
-  width: 80%;
+  width: 90%;
   max-width: 1000px;
   display: flex;
   flex-direction: row;
@@ -40,7 +39,6 @@ export default {
   }
 
   .feature__left {
-    border: solid 1px blue;
     flex: 1;
     display: flex;
     align-items: center;
@@ -52,6 +50,10 @@ export default {
       height: 320px;
       border-radius: 25px;
       object-fit: cover;
+
+      @media (max-width: $tablet) {
+        width: 100%
+      }
     }
   }
 
@@ -60,7 +62,6 @@ export default {
   }
 
   .feature__right {
-    border: solid 1px yellow;
     flex: 1;
     padding: 20px;
     display: flex;
@@ -69,9 +70,9 @@ export default {
     justify-content: center;
     text-align: left;
     order: 2;
-    
+
     @media (max-width: $tablet) {
-      order: 3
+      order: 3;
     }
 
     i {
