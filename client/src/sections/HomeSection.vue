@@ -143,6 +143,12 @@ export default {
     font-size: 2rem;
     transform: scaleX(-1);
   }
+
+  button {
+    @media (max-width: $pc) {
+      display: none;
+    }
+  }
 }
 
 .heroSection {
@@ -153,6 +159,11 @@ export default {
   height: 250px;
   margin-bottom: 250px;
 
+  @media (max-width: $tablet) {
+    width: 100%;
+    height: auto;
+  }
+
   h1 {
     font-size: 2.5rem;
     font-weight: 600;
@@ -160,6 +171,16 @@ export default {
     width: 800px;
     text-align: center;
     margin-bottom: 10px;
+
+    @media (max-width: $pc) {
+      font-size: 2.2rem;
+      width: 85%;
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 1.7rem;
+      width: 90%;
+    }
   }
 
   p.heroSection__description {
@@ -169,6 +190,11 @@ export default {
     margin-bottom: 20px;
     font-weight: 300;
     font-size: 1rem;
+
+    @media (max-width: $tablet) {
+      font-size: 0.9rem;
+      width: 70%;
+    }
   }
 }
 
@@ -177,6 +203,12 @@ export default {
   align-items: center;
   justify-content: space-around;
   width: 600px;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    height: 150px;
+    width: auto;
+  }
 
   .inputContainer {
     border: solid 1px $black;
@@ -221,6 +253,11 @@ export default {
   border-radius: 25px;
   position: absolute;
   top: 430px;
+
+  @media (max-width: $tablet) {
+    top: 480px;
+    width: 80%;
+  }
 
   img {
     width: 100%;
